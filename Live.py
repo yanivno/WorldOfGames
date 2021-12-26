@@ -20,10 +20,11 @@ def load_game():
 3. Currency Roulette - try and guess the value of a random amount of USD in ILS
 Enter your selection: """
     diff_menu = """Please choose game difficulty from 1 to 5:"""
-    game_selection = utils.get_num_input_in_range(game_menu, 1, 3)
-    diff_selection = utils.get_num_input_in_range(diff_menu, 1, 5)
-    # the return is used only for now...
     games = {'1': MemoryGame, '2': GuessGame, '3': CurrencyRouletteGame}
+
+    game_selection = utils.get_num_input_in_range(game_menu, utils.MINIMUM_ALLOWED_NUM, len(games))
+    diff_selection = utils.get_num_input_in_range(diff_menu, utils.MINIMUM_ALLOWED_NUM, utils.MAX_DIFFICULTY)
+
     game = games[str(game_selection)](diff_selection)
     is_user_winner = game.play()
     user_title = 'WINNER' if is_user_winner else 'LOSER'
