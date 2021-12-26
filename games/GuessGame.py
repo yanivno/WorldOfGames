@@ -12,27 +12,27 @@ class GuessGame(Game):
 
     def __init__(self, difficulty):
         Game.__init__(self, difficulty)
-        self.__secret_number = self.generate_number()
+        self.__secret_number = self.__generate_number()
 
     # Will generate number between 1 to difficulty and save it to secret_number.
-    def generate_number(self):
+    def __generate_number(self):
         return random.randint(utils.MINIMUM_ALLOWED_NUM, self.get_difficulty())
 
     # Will prompt the user for a number between 1 to difficulty and return the number.
-    def get_guess_from_user(self):
+    def __get_guess_from_user(self):
         input_text = f"please enter a number between {utils.MINIMUM_ALLOWED_NUM} and {self.get_difficulty()}: "
         return utils.get_num_input_in_range(input_text, utils.MINIMUM_ALLOWED_NUM, self.get_difficulty())
 
     # Will compare the the secret generated number to the one prompted by the get_guess_from_user.
-    def compare_results(self):
+    def __compare_results(self):
         return utils.cmp(self.__secret_number, self.__user_selection)
 
     # Will call the functions above and play the game. Will return True / False if the user ost or won.
     def play(self):
-        self.__user_selection = self.get_guess_from_user()
+        self.__user_selection = self.__get_guess_from_user()
         print(f"Computer guess {self.__secret_number}. user guess {self.__user_selection}")
         # 1 -> False, 0 -> True, -1 -> True
-        return self.compare_results() != 1
+        return self.__compare_results() != 1
 
 
 

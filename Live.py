@@ -19,7 +19,7 @@ def load_game():
 2. Guess Game - guess a number and see if you chose like the computer
 3. Currency Roulette - try and guess the value of a random amount of USD in ILS
 Enter your selection: """
-    diff_menu = "Please choose game difficulty from 1 to 5:"
+    diff_menu = """Please choose game difficulty from 1 to 5:"""
     game_selection = utils.get_num_input_in_range(game_menu, 1, 3)
     diff_selection = utils.get_num_input_in_range(diff_menu, 1, 5)
     # the return is used only for now...
