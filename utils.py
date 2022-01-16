@@ -1,14 +1,21 @@
+import os
 
-
-#consts
+# general consts
 MINIMUM_ALLOWED_NUM = 1
 MAX_DIFFICULTY = 5
+BAD_RETURN_CODE = -1
 
+# memory game
 MEMORY_GAME_MAX_ALLOWED_NUM = 101
 MEMORY_GAME_SLEEP_TIME_SECS = 0.7
 
-#currency roulette
+# currency roulette
 CURRENCY_ROULETTE_MAX_ALLOWED_NUM = 100
+
+# scores
+SCORES_FILE_NAME = "scores.txt"
+SCORES_DIFFICULTY_FACTOR = 3
+SCORES_BONUS = 5
 
 
 # generic function to receive valid int from user within min and max value provided.
@@ -47,3 +54,9 @@ def get_float_input(input_text):
 def cmp(a, b):
     return (a > b) - (a < b)
 
+
+def screen_cleaner():
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        _ = os.system('cls')
