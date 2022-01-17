@@ -17,6 +17,9 @@ SCORES_FILE_NAME = "scores.txt"
 SCORES_DIFFICULTY_FACTOR = 3
 SCORES_BONUS = 5
 
+# handlers
+# Free Currency
+FREE_CURRENCY_URI = 'https://freecurrencyapi.net/api/v2/latest?apikey=80e4c990-64ba-11ec-a0db-433f7c105da7'
 
 # generic function to receive valid int from user within min and max value provided.
 def get_num_input_in_range(input_text, min_value, max_value):
