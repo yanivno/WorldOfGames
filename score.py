@@ -9,7 +9,8 @@ class Score():
     def __init__(self, username):
         self._username = username
 
-    def get_scores_dict(self):
+    @staticmethod
+    def get_scores_dict():
         scores_dict = {}
         with open(SCORES_FILE_NAME, 'a+') as scores_handle:  # append or read
             scores_handle.seek(0)

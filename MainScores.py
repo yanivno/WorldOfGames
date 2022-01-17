@@ -7,7 +7,7 @@ class MainScores:
 
     @staticmethod
     def score_server():
-        score = Score(None).get_scores_dict()
+        score = Score.get_scores_dict()
         return render_template(SCORES_TEMPLATE, scores=score)
 
 
