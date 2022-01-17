@@ -1,9 +1,16 @@
 import os
 
+# flask server consts
+FLASK_IP_BIND = "0.0.0.0"
+FLASK_PORT_BIND = "3000"
+FLASK_ERROR_VIEW = "errorView.html"
+FLASK_TEMPLATE_FOLDER = "resources"
+
 # general consts
 MINIMUM_ALLOWED_NUM = 1
 MAX_DIFFICULTY = 5
 BAD_RETURN_CODE = -1
+
 
 # memory game
 MEMORY_GAME_MAX_ALLOWED_NUM = 101
@@ -16,6 +23,7 @@ CURRENCY_ROULETTE_MAX_ALLOWED_NUM = 100
 SCORES_FILE_NAME = "scores.txt"
 SCORES_DIFFICULTY_FACTOR = 3
 SCORES_BONUS = 5
+SCORES_TEMPLATE = "scoreView.html"
 
 # handlers
 # Free Currency

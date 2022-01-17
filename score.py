@@ -9,7 +9,7 @@ class Score():
     def __init__(self, username):
         self._username = username
 
-    def _get_scores_dict(self):
+    def get_scores_dict(self):
         scores_dict = {}
         with open(SCORES_FILE_NAME, 'a+') as scores_handle:  # append or read
             scores_handle.seek(0)
@@ -22,7 +22,7 @@ class Score():
             json.dump(scores_dict, scores_handle)
 
     def add_score(self, difficulty):
-        registered_high_scores = self._get_scores_dict()
+        registered_high_scores = self.get_scores_dict()
         # print(f"current high scores: {registered_high_scores}")
         current_score = (difficulty * SCORES_DIFFICULTY_FACTOR) + SCORES_BONUS
         # print(f"calc score {current_score}")
