@@ -1,5 +1,6 @@
 import utils
 import random
+import logging
 from games.Game import Game
 
 
@@ -16,14 +17,16 @@ class GuessGame(Game):
 
     # Will generate number between 1 to difficulty and save it to secret_number.
     def __generate_number(self):
-        return random.randint(utils.MINIMUM_ALLOWED_NUM, self.get_difficulty())
+        num = random.randint(utils.MINIMUM_ALLOWED_NUM, self.get_difficulty())
+        logging.debug(f"my secret number is {num}")
+        return num
 
     # Will prompt the user for a number between 1 to difficulty and return the number.
     def __get_guess_from_user(self):
-        input_text = f"please enter a number between {utils.MINIMUM_ALLOWED_NUM} and {self.get_difficulty()}: "
+        input_text = f"Please enter a number between {utils.MINIMUM_ALLOWED_NUM} and {self.get_difficulty()}: "
         return utils.get_num_input_in_range(input_text, utils.MINIMUM_ALLOWED_NUM, self.get_difficulty())
 
-    # Will compare the the secret generated number to the one prompted by the get_guess_from_user.
+    # Will compare the secret generated number to the one prompted by the get_guess_from_user.
     def __compare_results(self):
         return utils.cmp(self.__secret_number, self.__user_selection)
 

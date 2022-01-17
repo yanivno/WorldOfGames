@@ -1,5 +1,6 @@
 import utils
 import random
+import logging
 from handlers.free_currency_api_handler import get_currency_rate
 from games.Game import Game
 
@@ -17,6 +18,7 @@ class CurrencyRouletteGame(Game):
         Game.__init__(self, difficulty)
         self.__comp_money_usd = random.randint(utils.MINIMUM_ALLOWED_NUM, utils.CURRENCY_ROULETTE_MAX_ALLOWED_NUM)
         self.__usd_ils_exchange_rate = get_currency_rate("ILS")
+        logging.debug(f"I have selected {self.__comp_money_usd} usd, with exchange rate {self.__usd_ils_exchange_rate}")
 
     # Will get the current currency rate from USD to ILS and will generate an interval as follows:
     # for given difficulty d, and total value of money t the interval will be: (t - (5 - d), t + (5 - d))
@@ -25,12 +27,14 @@ class CurrencyRouletteGame(Game):
         interval_window = (5 - self.get_difficulty())
         min_interval = round(comp_money_in_ils - interval_window, 2)
         max_interval = round(comp_money_in_ils + interval_window, 2)
+        logging.debug(f"my intervals are {min_interval} and {max_interval}")
         return min_interval, max_interval
 
     # A method to prompt a guess from the user to enter a guess of value to a given amount of USD
     def __get_guess_from_user(self):
         text = f"Try and guess {self.__comp_money_usd}$ in ILS: "
         self.__user_guess_in_ils = utils.get_float_input(text)
+        logging.debug(f"user guess is {self.__user_guess_in_ils}")
 
     # Will call the functions above and play the game. Will return True / False if the user lost or won.
     def play(self):

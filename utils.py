@@ -1,4 +1,5 @@
 import os
+import logging
 
 # flask server consts
 FLASK_IP_BIND = "0.0.0.0"
@@ -10,6 +11,7 @@ FLASK_TEMPLATE_FOLDER = "resources"
 MINIMUM_ALLOWED_NUM = 1
 MAX_DIFFICULTY = 5
 BAD_RETURN_CODE = -1
+LOG_LEVEL = logging.INFO
 
 # memory game
 MEMORY_GAME_MAX_ALLOWED_NUM = 101
