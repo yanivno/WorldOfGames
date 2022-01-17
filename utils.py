@@ -3,14 +3,13 @@ import os
 # flask server consts
 FLASK_IP_BIND = "0.0.0.0"
 FLASK_PORT_BIND = "3000"
-FLASK_ERROR_VIEW = "errorView.html"
+FLASK_ERROR_TEMPLATE = "errorView.html"
 FLASK_TEMPLATE_FOLDER = "resources"
 
 # general consts
 MINIMUM_ALLOWED_NUM = 1
 MAX_DIFFICULTY = 5
 BAD_RETURN_CODE = -1
-
 
 # memory game
 MEMORY_GAME_MAX_ALLOWED_NUM = 101
@@ -28,6 +27,7 @@ SCORES_TEMPLATE = "scoreView.html"
 # handlers
 # Free Currency
 FREE_CURRENCY_URI = 'https://freecurrencyapi.net/api/v2/latest?apikey=80e4c990-64ba-11ec-a0db-433f7c105da7'
+
 
 # generic function to receive valid int from user within min and max value provided.
 def get_num_input_in_range(input_text, min_value, max_value):

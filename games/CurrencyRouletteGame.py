@@ -23,8 +23,8 @@ class CurrencyRouletteGame(Game):
     def __get_money_interval(self):
         comp_money_in_ils = self.__comp_money_usd * self.__usd_ils_exchange_rate
         interval_window = (5 - self.get_difficulty())
-        min_interval = comp_money_in_ils - interval_window
-        max_interval = comp_money_in_ils + interval_window
+        min_interval = round(comp_money_in_ils - interval_window, 2)
+        max_interval = round(comp_money_in_ils + interval_window, 2)
         return min_interval, max_interval
 
     # A method to prompt a guess from the user to enter a guess of value to a given amount of USD
