@@ -19,6 +19,7 @@ def score_server():
 
     app = Flask('app', template_folder=FLASK_TEMPLATE_FOLDER)
     app.add_url_rule(rule="/", view_func=get_scores, methods=["GET"])
+    logging.debug(f"starting server on {FLASK_IP_BIND}:{FLASK_PORT_BIND}...")
     app.run(host=FLASK_IP_BIND, port=FLASK_PORT_BIND, debug=True)
 
 
