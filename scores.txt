@@ -1,1 +1,1 @@
-{"yaniv": 17, "ddf": 20, "ddd": 20, "dfdfd": 20}
+{yaniv:80}
