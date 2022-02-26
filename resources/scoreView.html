@@ -41,7 +41,7 @@
                 {% for key, value in scores.items() %}
                 <tr>
                     <td>{{ key }}</td>
-                    <td>{{ value }}</td>
+                    <td id="score_{{ key }}">{{ value }}</td>
                 </tr>
             {% endfor %}
             </tbody>

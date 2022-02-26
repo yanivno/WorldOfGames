@@ -15,7 +15,7 @@ def get_scores():
 
 
 def score_server():
-    log = logging.getLogger('werkzeug').disabled = True
+    # log = logging.getLogger('werkzeug').disabled = True
 
     app = Flask('app', template_folder=FLASK_TEMPLATE_FOLDER)
     app.add_url_rule(rule="/", view_func=get_scores, methods=["GET"])

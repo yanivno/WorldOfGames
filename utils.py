@@ -3,7 +3,7 @@ import logging
 
 # flask server consts
 FLASK_IP_BIND = "0.0.0.0"
-FLASK_PORT_BIND = "3000"
+FLASK_PORT_BIND = "4000"
 FLASK_ERROR_TEMPLATE = "errorView.html"
 FLASK_TEMPLATE_FOLDER = "resources"
 
