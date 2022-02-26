@@ -5,5 +5,5 @@ services:
     build: .
     image: ${IMAGEPATH}
     ports:
-      - "8777:5000"
+      - "8777:4000"
     container_name: score-server
