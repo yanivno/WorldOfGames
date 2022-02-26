@@ -30,6 +30,7 @@ pipeline {
     stage('Test') {
       steps {
           echo 'testing the score server...'
+          sh ' pip3 install -r requirements.txt'
           sh 'python3 tests/e2e.py http://localhost:8777'
       }
     }
