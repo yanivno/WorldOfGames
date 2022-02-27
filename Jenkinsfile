@@ -21,7 +21,7 @@ pipeline {
       steps {
           echo 'Running the container image...'
           echo 'Making a dummy score file'
-          sh 'echo \'{"yaniv":80}\' > dummy_scores.txt'
+          sh 'echo \'{ "yaniv" : 80}\' > dummy_scores.txt'
           sh 'docker-compose down && docker-compose up -d'
           sh 'docker-compose cp dummy_scores.txt score-server:scores.txt'
       }
@@ -30,7 +30,7 @@ pipeline {
     stage('Test') {
       steps {
           echo 'testing the score server...'
-          sh ' pip3 install -r requirements.txt'
+          sh 'pip3 install -r requirements.txt'
           sh 'python3 tests/e2e.py http://localhost:8777'
       }
     }
